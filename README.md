@@ -70,8 +70,3 @@ Throughout my career, I have collaborated with cross-functional teams to ensure 
 - [LinkedIn](https://linkedin.com/in/sergiodiaz93)
 - [GitHub](https://github.com/SerDiaz)
 - [Email](mailto:sergiodiazgonzalez93@gmail.com)
-
----
-
-## 📊 GitHub Stats
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=SerDiaz&show_icons=true&theme=radical)
