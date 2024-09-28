@@ -1,0 +1,41 @@
+name: Update README with GitHub Stats
+
+on:
+  # Configura el workflow para que se ejecute automáticamente cada día a la medianoche.
+  schedule:
+    - cron: "0 0 * * *" 
+  # Permite ejecutar manualmente el workflow desde la pestaña de Actions en GitHub.
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Paso 1: Clona el repositorio actual.
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    # Paso 2: Configura el token usando el secreto TOKEN_STATS.
+    - name: Set up GitHub Stats Token
+      env:
+        GITHUB_TOKEN: ${{ secrets.TOKEN_STATS }}
+
+    # Paso 3: Llama a GitHub Readme Stats para generar la imagen de estadísticas.
+    - name: Generate GitHub Stats
+      run: |
+        echo "![GitHub Stats](https://github-readme-stats.vercel.app/api?username=${{ github.repository_owner }}&show_icons=true&theme=radical&count_private=true&include_all_commits=true&token=${{ secrets.TOKEN_STATS }})" > stats.md
+
+    # Paso 4: Actualiza el archivo README.md con las estadísticas generadas.
+    - name: Update README
+      run: |
+        sed -i '/^<!--START_SECTION:github-stats-->/r stats.md' README.md
+
+    # Paso 5: Realiza un commit y hace push al repositorio con los cambios.
+    - name: Commit and Push
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add README.md
+        git commit -m "Update README with latest GitHub stats"
+        git push
