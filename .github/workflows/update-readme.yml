@@ -34,6 +34,6 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md
-          git commit -m "Update README with latest GitHub stats"
+          git add README.md stats.md  # Asegúrate de incluir stats.md
+          git commit -m "Update README with latest GitHub stats" || echo "No changes to commit"
           git push
