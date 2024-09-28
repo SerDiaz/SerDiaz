@@ -1,41 +1,37 @@
 name: Update README with GitHub Stats
 
 on:
-  # Ejecuta manualmente el workflow desde la pestaña de Actions en GitHub.
   workflow_dispatch:
-
-  # Programación para ejecutar el workflow automáticamente cada día a la medianoche.
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 0 * * *"  # Ejecutar automáticamente a la medianoche cada día.
 
 jobs:
   update-readme:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4  # Utiliza la acción para clonar el repositorio.
+      - uses: actions/checkout@v4  # Clona el repositorio.
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '14'
 
-      - run: echo "TOKEN_STATS=${{ secrets.TOKEN_STATS }}" >> $GITHUB_ENV
+      - run: echo "TOKEN_STATS=${{ secrets.TOKEN_STATS }}" >> $GITHUB_ENV  # Configura el token en el entorno.
 
-      - name: Generate GitHub Stats
+      - name: Generate GitHub Stats and Update README
         run: |
-          echo "![GitHub Stats](https://github-readme-stats.vercel.app/api?username=${{ github.repository_owner }}&show_icons=true&theme=radical&count_private=true&include_all_commits=true&token=${{ secrets.TOKEN_STATS }})" > stats.md
-
-      - name: Update README
-        run: |
-          sed -i '/^<!--START_SECTION:github-stats-->/r stats.md' README.md
+          # Generar la URL de las estadísticas usando el token
+          stats_url="https://github-readme-stats.vercel.app/api?username=${{ github.repository_owner }}&show_icons=true&theme=radical&count_private=true&include_all_commits=true&token=${{ secrets.TOKEN_STATS }}"
+          
+          # Inserta las estadísticas en README.md directamente, sin guardar el token en stats.md
+          sed -i "/^<!--START_SECTION:github-stats-->/,/^<!--END_SECTION:github-stats-->/c\\
+          <!--START_SECTION:github-stats-->\n![GitHub Stats](${stats_url})\n<!--END_SECTION:github-stats-->" README.md
 
       - name: Commit and Push
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git remote set-url origin https://x-access-token:${{ secrets.TOKEN_STATS }}@github.com/SerDiaz/SerDiaz.git  
-          git add README.md stats.md
+          git add README.md  # Solo incluye README.md, no stats.md
           git commit -m "Update README with latest GitHub stats" || echo "No changes to commit"
           git push
-
