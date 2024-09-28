@@ -8,16 +8,43 @@ Throughout my career, I have collaborated with cross-functional teams to ensure 
 ---
 
 ## 🛠️ Specialties & Skills
-- **Development & Management of Data Architectures**
-- **Cloud Computing**: AWS (S3, Glue, EC2, Lambda)
-- **Programming**: Advanced Python (Pandas, Matplotlib, Plotly, TensorFlow, Keras)
-- **Data Visualization**: Power BI, Plotly's Dash
-- **Databases**: PostgreSQL, Elasticsearch
-- **Containerization & Workflow Automation**: Docker, Apache Airflow
-- **Version Control & CI/CD**: Git, GitHub Actions
-- **Machine Learning & Deep Learning**: Keras, TensorFlow
-- **Agile Development**: Scrum Methodology
+### Programming & Data Processing
+- **Advanced Python**: Pandas, NumPy, Matplotlib, Plotly
+- **Big Data Processing**: Apache Spark
+- **Statistical Programming**: R
+- **Scripting**: Bash
 
+### Machine Learning & Deep Learning
+- **Machine Learning Algorithms**: K-Nearest Neighbors (KNN), Decision Trees, Support Vector Machines (SVM), ARIMA, Rule-Based Decision Trees
+- **Deep Learning Architectures**: Convolutional Neural Networks (CNN), Long Short-Term Memory Networks (LSTM), Transformers
+- **Frameworks**: TensorFlow, Keras
+- **Techniques**: Supervised & Unsupervised Learning, Time Series Analysis, Sentiment Analysis
+
+### Data Analysis & Decision-Making Techniques
+- **Analytic Hierarchy Process (AHP)**: Multicriteria decision-making
+- **Decision Analysis**: Evaluation of trade-offs and prioritization
+- **Sentiment Analysis**: Textual and emotional content analysis
+
+### Cloud & DevOps
+- **Cloud Platforms**: AWS (S3, Glue, EC2, Lambda, RDS)
+- **Infrastructure as Code (IaC)**: Terraform
+- **Containerization & Orchestration**: Docker
+- **Workflow Automation**: Apache Airflow
+- **CI/CD**: Git (Version Control), GitHub Actions (Basic Understanding), Azure DevOps
+
+### Data Visualization & Business Intelligence
+- **Visualization Tools**: Power BI, Plotly's Dash
+- **Diagramming**: DiagramDB.io (ERD), Mermaid, Miro
+- **Dashboard Development & Data Storytelling**
+
+### Database Management
+- **Relational Databases**: PostgreSQL, Microsoft SQL Server, MySQL, SQLite
+- **NoSQL & Search Databases**: Elasticsearch, MongoDB
+
+### Project Management & Methodologies
+- **Agile Development**: Scrum Methodology
+- **Project Management Tools**: Notion, Azure DevOps, Miro
+- **Project Guidance & Team Leadership**
 ---
 
 ## 💼 Professional Experience
