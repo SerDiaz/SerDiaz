@@ -1,7 +1,12 @@
 name: Update README with GitHub Stats
-on: [push, schedule]  # Ejecutar al hacer push y según cron.
-schedule:
-  - cron: "0 0 * * *"  # Ejecutar automáticamente cada día a la medianoche.
+
+on:
+  # Ejecuta manualmente el workflow desde la pestaña de Actions en GitHub.
+  workflow_dispatch:
+
+  # Programación para ejecutar el workflow automáticamente cada día a la medianoche.
+  schedule:
+    - cron: "0 0 * * *"
 
 jobs:
   update-readme:
@@ -10,12 +15,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4  # Utiliza la acción para clonar el repositorio.
 
-      - name: Set up Node.js  # Configura Node.js (similar a tu ejemplo).
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '14'  # Versión de Node.js.
+          node-version: '14'
 
-      - run: echo "TOKEN_STATS=${{ secrets.TOKEN_STATS }}" >> $GITHUB_ENV  # Paso para configurar el token.
+      - run: echo "TOKEN_STATS=${{ secrets.TOKEN_STATS }}" >> $GITHUB_ENV
 
       - name: Generate GitHub Stats
         run: |
