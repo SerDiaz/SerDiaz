@@ -16,10 +16,9 @@ jobs:
 
       # Paso 2: Configura el token usando el secreto TOKEN_STATS.
       - name: Set up GitHub Stats Token
-        run: |
-          echo "TOKEN_STATS=${{ secrets.TOKEN_STATS }}" >> $GITHUB_ENV
+        run: echo "TOKEN_STATS=${{ secrets.TOKEN_STATS }}" >> $GITHUB_ENV
 
-      # Paso 3: Llama a GitHub Readme Stats para generar la imagen de estadísticas.
+      # Paso 3: Genera la imagen de estadísticas.
       - name: Generate GitHub Stats
         run: |
           echo "![GitHub Stats](https://github-readme-stats.vercel.app/api?username=${{ github.repository_owner }}&show_icons=true&theme=radical&count_private=true&include_all_commits=true&token=${{ secrets.TOKEN_STATS }})" > stats.md
