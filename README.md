@@ -30,7 +30,7 @@ Throughout my career, I have collaborated with cross-functional teams to ensure 
 - **Infrastructure as Code (IaC)**: Terraform
 - **Containerization & Orchestration**: Docker
 - **Workflow Automation**: Apache Airflow
-- **CI/CD**: Git (Version Control), GitHub Actions (Basic Understanding), Azure DevOps
+- **CI/CD**: Git (Version Control), GitHub Actions
 
 ### Data Visualization & Business Intelligence
 - **Visualization Tools**: Power BI, Plotly's Dash
