@@ -10,28 +10,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Paso 1: Clona el repositorio actual.
-      - name: Checkout Repository
+      - name: Checkout Repository  # Paso 1: Clona el repositorio actual.
         uses: actions/checkout@v2
 
-      # Paso 2: Configura el token usando el secreto TOKEN_STATS.
-      - name: Set up GitHub Stats Token
-        run: echo "TOKEN_STATS=${{ secrets.TOKEN_STATS }}" >> $GITHUB_ENV
+      - name: Set up GitHub Stats Token  # Paso 2: Configura el token usando el secreto.
+        run: |
+          echo "TOKEN_STATS=${{ secrets.TOKEN_STATS }}" >> $GITHUB_ENV
 
-      # Paso 3: Genera la imagen de estadísticas.
-      - name: Generate GitHub Stats
+      - name: Generate GitHub Stats  # Paso 3: Genera las estadísticas.
         run: |
           echo "![GitHub Stats](https://github-readme-stats.vercel.app/api?username=${{ github.repository_owner }}&show_icons=true&theme=radical&count_private=true&include_all_commits=true&token=${{ secrets.TOKEN_STATS }})" > stats.md
 
-      # Paso 4: Actualiza el archivo README.md con las estadísticas generadas.
-      - name: Update README
+      - name: Update README  # Paso 4: Inserta las estadísticas en README.md.
         run: |
           sed -i '/^<!--START_SECTION:github-stats-->/r stats.md' README.md
 
-      # Paso 5: Realiza un commit y hace push al repositorio con los cambios.
-      - name: Commit and Push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit and Push  # Paso 5: Realiza commit y push con los cambios.
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
