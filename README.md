@@ -61,10 +61,24 @@ Throughout my career, I have collaborated with cross-functional teams to ensure 
 - Mentored students in their final degree projects and supervised external internships.
 - Subjects included: Programming Applied to Energy, Advanced Operating Systems, Automation and Industrial Control.
 
-### Technical Team Leader, Project MEDIBBLE
+### Data Architect & Technical Lead, Project MEDIBBLE
 **2020 – 2022**
-- Led a team to develop dashboards for visualizing the socioeconomic status of Tenerife using tools like Python, Pandas, PostgreSQL, and Power BI.
-- Coordinated a group of 3-5 individuals, managing data extraction, classification, and exploitation.
+- Led the development of data infrastructure for the “Competitiveness Monitor of the Island of Tenerife,” coordinating a multidisciplinary team.
+- Utilized tools like Python, R, Pandas, PostgreSQL, and Keras/TensorFlow for data analysis and modeling.
+- Implemented Docker and Airflow for infrastructure and workflow management, enhancing real-time data visualization.
+
+### Python Developer & Researcher, Project ANESCON
+**2019 – 2020**
+- Developed software in Python to automate drug infusion and monitor patient status during surgeries.
+- Integrated a PID controller with medical devices (BIS, ANI) to ensure precise drug administration.
+- Created safety mechanisms and an intuitive interface for visualizing and simulating clinical scenarios.
+
+### Data Engineer & Data Scientist, Project VITUIN
+**2017 – 2018**
+- Developed an automated data analytics platform for the tourism sector of Puerto de la Cruz.
+- Implemented ETL processes and machine learning models for sentiment analysis using Python and R.
+- Collaborated with multiple departments to visualize strategic information and improve decision-making.
+
 
 ---
 
